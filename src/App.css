@@ -1,38 +1,167 @@
-.App {
+.website-name {
+  font-size: 30px; /* Adjust the font size as needed */
+  color: orange;
+}
+
+.website-name::before {
+  content: "LF";
+  font-style: italic;
+  color: darkgreen;
+  display: inline-block;
+  background-color: orange;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 5px; /* Add some spacing */
+}
+
+/* Navbar styling */
+nav {
+  background-color: #d00027;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li:last-child {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 45px;
+}
+
+nav ul li a:hover {
+  color: #f18c06e1;
+}
+
+nav ul li a.active {
+  color: #f18c06e1;
+}
+/* nav styling end here */
+
+/* forms styling starts here */
+
+.form-details {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container {
   display: flex;
   flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-container label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-container label > span {
+  flex-basis: 30%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.form-container input {
+  flex-basis: 70%;
+  width: 100%;
+  padding: 5px;
+}
+
+.form-container button[type='submit'] {
+  margin-top: 10px;
+}
+
+.dob-inputs {
+  display: flex;
+  gap: 10px;
+}
+/* forms styling ends here */
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  /* align-items: center;  */
+  height: 100vh; /* Set the container height to the full viewport height */
+}
+
+.item {
+  width: 30%; /* Three items per row */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.furniture-image {
+  max-width: 100%;
+  
+  height: auto;
+}
+
+.item-header {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.edit-icon-container {
+  position: absolute;
+  top: 97%;
+  right: 5%;
+  transform: translateY(-50%);
+  background-color: #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #6463639c;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-container {
+  height: 100vh; /* Set the container height to full viewport height */
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.homepage-image {
+  background-image: url('https://housing.com/news/wp-content/uploads/2022/11/living-room-furniture-design-compressed-1.jpg'); /* Replace 'your-image-url.jpg' with your actual image URL */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
