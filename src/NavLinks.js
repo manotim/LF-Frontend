@@ -6,11 +6,10 @@ import {
 function NavLinks() {
   return (
     <div>
+        <span className="website-name">LUXES-FURNITURE</span>
+        <br/>
         <nav>
           <ul>
-            <li>
-              <span className="website-name">Luxes-Furniture</span>
-            </li>
             <li>
               <NavLink exact to='/' activeClassName='active'>
                 Home
