@@ -1,5 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import Footer from './footer';
+
 
 function UpdateFurniture({ name, description, price, image, category, editFurniture }) {
   const [furniture, setFurniture] = useState({
@@ -8,97 +10,98 @@ function UpdateFurniture({ name, description, price, image, category, editFurnit
     description: '',
     price: 0.0,
     image: '',
-   category: '',
-  })
+    category: '',
+  });
 
-
-function handleChange(event) {
-    let key = event.target.id
+  function handleChange(event) {
+    let key = event.target.id;
     setFurniture((prevObj) => {
-      return { ...prevObj, [key]: event.target.value }
-    })
+      return { ...prevObj, [key]: event.target.value };
+    });
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    editFurniture(furniture)
-  }
+    e.preventDefault();
+    editFurniture(furniture);
+  };
+
   return (
     <div>
-      <form className='form-container' id='container-form' onSubmit={handleSubmit}>
+      <form className="form-container" id="container-form" onSubmit={handleSubmit}>
         <legend>Sell Your Furniture Now:</legend>
-        <label htmlFor='id'>ID:</label>
+        <label htmlFor="id">ID:</label>
         <input
-          type='number'
+          type="number"
           value={furniture.id}
-          id='id'
-          name='id'
-          placeholder='Enter your ID'
+          id="id"
+          name="id"
+          placeholder="Enter your ID"
           onChange={handleChange}
           required
         />
         <br />
-        <label htmlFor='name'>Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
-          type='text'
+          type="text"
           value={furniture.name}
-          id='name'
-          name='name'
-          placeholder='Enter Furniture name'
+          id="name"
+          name="name"
+          placeholder="Enter Furniture name"
           onChange={handleChange}
           required
         />
         <br />
-        <label htmlFor='description'>Description:</label>
+        <label htmlFor="description">Description:</label>
         <input
-          type='text'
-          name='description'
+          type="text"
+          name="description"
           value={furniture.description}
-          id='description'
-          placeholder='Describe your furniture abit.'
+          id="description"
+          placeholder="Describe your furniture abit."
           onChange={handleChange}
           required
         />
         <br />
-        <label htmlFor='price'>Price:</label>
+        <label htmlFor="price">Price:</label>
         <input
-          type='number'
-          name='price'
+          type="number"
+          name="price"
           value={furniture.price}
-          id='price'
-          placeholder='Enter Furniture Price'
+          id="price"
+          placeholder="Enter Furniture Price"
           onChange={handleChange}
           required
         />
         <br />
-        <label htmlFor='image'>Image URL:</label>
+        <label htmlFor="image">Image URL:</label>
         <input
-          type='text'
-          name='image'
+          type="text"
+          name="image"
           value={furniture.image}
-          id='image'
-          placeholder='Enter Image Link'
+          id="image"
+          placeholder="Enter Image Link"
           onChange={handleChange}
           required
         />
         <br />
-        <label htmlFor='category'>Furniture Category:</label>
+        <label htmlFor="category">Furniture Category:</label>
         <input
-          type='text'
-          name='category'
+          type="text"
+          name="category"
           value={furniture.category}
-          id='category'
-          placeholder='Enter Furniture Category'
+          id="category"
+          placeholder="Enter Furniture Category"
           onChange={handleChange}
           required
         />
         <br />
-        <button className='submit' type='submit'>
+        <button className="submit" type="submit">
           Confirm Edits
         </button>
       </form>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default UpdateFurniture
+export default UpdateFurniture;
